@@ -43,7 +43,8 @@ passport.deserializeUser(function(id, done){
 passport.use(new GoogleStrategy({
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback'     //This is where 2nd call back to google happens after first call to goolge 
+    callbackURL: '/auth/google/callback',     //This is where 2nd call back to google happens after first call to goolge 
+    proxy:  true
     }, (accessToken, refreshToken, profile, done) => {
         /* console.log('accessToken : ' + accessToken);
         console.log('refreshTonen: ' + refreshToken);
